@@ -1,7 +1,7 @@
 class Solution {
 public:
     int reverse(int x) {
-        char temp[10] = "";
+        char temp[10] = "0";
 		bool flg = x > 0 ? 0 : 1;
 		for(int i = 0; x != 0; i++){
 		    int t = flg ? -( x % 10 ) : x % 10;

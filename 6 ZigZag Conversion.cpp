@@ -7,10 +7,11 @@ public:
         }
         else if(numRows == 2){
             string sRes;
-			sRes.resize(s.length());
+            sRes.resize(s.length());
             for(int i = 0 , k=0 ,flg = 0; i <= s.length()+1 ; i = i + 2,k++){
                 if(flg == 1&&i >= s.length()){
                     break;
+                    
                 }
                 if(i >= s.length()){
                     i = 1;
@@ -36,17 +37,15 @@ public:
                 }
                 if(((k+add)/numRows)%2 == 0){
                     arr[k][(k+add)%numRows] = s[k];
-                    cout<<"(k\/numRows)%2 == 0 arr "<<k<<" "<<(k+add)%(numRows)<<" = "<<s[k]<<endl;
                 }
                 else if(((k+add)/numRows)%2 == 1){
                     arr[k][numRows-1 - (k+add)%numRows] = s[k];
-                    cout<<"(k\/numRows)%2 == 1 arr "<<k<<" "<<numRows - ((k+add)%numRows)<<" = "<<s[k]<<" add = "<<add<<endl;
                 }
                 
             }
             //new string
             string conv;
-			conv.resize(s.length());
+            conv.resize(s.length());
             int index = 0;
             for(int r = 0; r < numRows; r++){
                 for(int n = 0; n < s.length(); n++){
@@ -54,12 +53,6 @@ public:
                         conv[index] = arr[n][r];
                         index++;
                     }
-                }
-            }
-            //for debug
-            for(int i = 0; i < s.length(); i++){
-                for(int j = 0; j < numRows; j++){
-                    cout<<"arr["<<i<<"]["<<j<<"] = "<<arr[i][j]<<endl;
                 }
             }
             return conv;
